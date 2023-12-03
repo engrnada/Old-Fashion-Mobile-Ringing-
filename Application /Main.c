@@ -109,11 +109,17 @@ int main (){
 			break;
 		case '=':
 			Leds_off();
+			CLCD_ClearScreen ();
+			CLCD_SetPosition  (1,1);
+			CLCD_SendString ("Ringing...");
 			BUZZ_VoidOn(Buzz1);
 			_delay_ms(1000);
 			break;
 		case '+':
 			Leds_off();
+			CLCD_ClearScreen ();
+			CLCD_SetPosition  (1,1);
+			CLCD_SendString ("Call Ended");
 			BUZZ_VoidOf(Buzz1);
 			_delay_ms(1000);
 			break;
@@ -127,3 +133,4 @@ int main (){
 	return 0;
 
 	}
+
